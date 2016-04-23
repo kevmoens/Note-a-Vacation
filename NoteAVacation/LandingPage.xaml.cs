@@ -22,19 +22,19 @@ namespace NoteAVacation
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class LandingPage : Page
     {
-        public MainPage()
+        public LandingPage()
         {
             this.InitializeComponent();
             this.Loaded += Frame_Loaded;
         }
 
-        private async void Frame_Loaded(object sender, RoutedEventArgs e)
+        private  void Frame_Loaded(object sender, RoutedEventArgs e)
         {
             //Map.MapServiceToken = "OzdCEEwHEFD53KK9TqZYQQ";
-            await Map.TrySetViewAsync(new Geopoint(new BasicGeoposition { Latitude = 41.88259, Longitude = -87.63741 }),
-              16, 0, 0, MapAnimationKind.Bow);
+            //await Map.TrySetViewAsync(new Geopoint(new BasicGeoposition { Latitude = 41.88259, Longitude = -87.63741 }),
+            //  16, 0, 0, MapAnimationKind.Bow);
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
@@ -43,12 +43,9 @@ namespace NoteAVacation
             var accessStatus = await Geolocator.RequestAccessAsync();
         }
 
-        private async void button1_Click(object sender, RoutedEventArgs e)
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var element in Map.MapElements)
-            {
-                await new MessageDialog("").ShowAsync();
-            }
+            Frame.Navigate(typeof(Signup));
         }
     }
 }

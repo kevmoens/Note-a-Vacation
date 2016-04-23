@@ -1,0 +1,37 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NoteAVacation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="NoteAVacation.LandingPage"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" x:Name="gRow1"/>
+            <RowDefinition Height="*" x:Name="gRow2"/>
+            <RowDefinition Height="*" x:Name="gRow3"/>
+            <RowDefinition Height="*" x:Name="gRow4"/>
+            <RowDefinition Height="*" x:Name="gRow5"/>
+            <RowDefinition Height="*" x:Name="gRow6"/>
+            <RowDefinition Height="*" x:Name="gRow7"/>
+            <RowDefinition Height="*" x:Name="gRow8"/>
+            <RowDefinition Height="50" x:Name="gRow9"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" x:Name="gCol1"/>
+            <ColumnDefinition Width="75" x:Name="gCol2"/>
+            <ColumnDefinition Width="*" x:Name="gCol3"/>
+            <ColumnDefinition Width="50" x:Name="gCol4"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnLogin" Content="Login" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Top" Width="260" Height="{Binding ActualHeight,ElementName=gRow5}"  Grid.RowSpan="2"/>
+        <TextBlock x:Name="lblPassword" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="4" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="{Binding ActualWidth,ElementName=gcol2}"/>
+        <TextBox x:Name="txtPassword" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=gCol3}"/>
+        <TextBlock x:Name="lblEmail" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="{Binding ActualWidth,ElementName=gCol2}"/>
+        <TextBox x:Name="txtEmail" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="{Binding ActualWidth,ElementName=gCol3}"/>
+        <HyperlinkButton Content="Forgot Password" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <HyperlinkButton Content="Sign Up" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="7" VerticalAlignment="Bottom"   Grid.ColumnSpan="2" Click="HyperlinkButton_Click"/>
+    </Grid>
+
+</Page>
