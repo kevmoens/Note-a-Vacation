@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using NAVDataAccess;
+using Windows.UI.Popups;
 
 namespace NoteAVacation
 {
@@ -27,9 +29,33 @@ namespace NoteAVacation
             this.InitializeComponent();
         }
 
-        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        private async void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            //Frame.Navigate(typeof(MainPage));
+
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                await new MessageDialog("Invalid Email Address").ShowAsync();
+                return;
+            }
+            if (!(txtEmail.Text.ToUpper().Trim() ==  txtReenterEmail.Text.ToUpper().Trim()))
+            {
+                await new MessageDialog("Email Address don't match").ShowAsync();
+                return;
+            }
+
+            Profile newProfile = new Profile();
+            newProfile.Email = txtEmail.Text;
+            newProfile.Password = txtPassword.Text;
+            newProfile.FirstName = txtFirstName.Text;
+            newProfile.LastName = txtLastName.Text;
+            string addMessage = await newProfile.AddNewProfile();
+            if (String.IsNullOrEmpty(addMessage)) {
+                //Frame.Navigate(typeof(MainPage));
+            } else
+            {
+                await new MessageDialog("Email Address already has an account").ShowAsync();
+                return;
+            }
         }
     }
 }

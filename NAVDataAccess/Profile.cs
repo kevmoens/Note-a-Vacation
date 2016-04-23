@@ -82,10 +82,14 @@ namespace NAVDataAccess
             }
         }
 
-        public async void AddNewProfile()
+        public async Task<string> AddNewProfile()
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            //string result = await proxy.QueryAsync("profile", "");
+            //deserialize to see if it returns a profile
+            //if profile doesn't exist run add else return false
             await proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
+            return "";
         }
         public async Task<bool> LoginRequest(string inEmail, string inPassword)
         {

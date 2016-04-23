@@ -136,6 +136,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExpediaSDK\ExpediaSDK.vbproj">
+      <Project>{4df4176b-4114-4d05-a4b5-b82ce9809732}</Project>
+      <Name>ExpediaSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAVDataAccess\NAVDataAccess.csproj">
+      <Project>{aa911f50-e4b9-4332-af55-03c45d8392b4}</Project>
+      <Name>NAVDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
