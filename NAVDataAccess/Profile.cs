@@ -87,6 +87,12 @@ namespace NAVDataAccess
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
             await proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
         }
+        public async Task<bool> LoginRequest(string inEmail, string inPassword)
+        {
+                        WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            string result = await proxy.QueryAsync("profile", "");
+            return false;
+        }
     }
 
     public class Trip
