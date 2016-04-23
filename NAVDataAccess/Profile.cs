@@ -32,5 +32,24 @@ namespace NAVDataAccess
                 _LastName = value;
             }
         }
+        //email
+        //password
+        //trips[]
+        //historytrips[]
+    }
+
+    public class Trip
+    {
+        //name
+        //location (latitude, longitude)
+        //radius
+        //checkin date
+        //checkout date
+        //min star rating
+        //number of adults
+        //number of children
+        //notification settings
+        //trends[]
+        //hotelsinradius[]
     }
 }

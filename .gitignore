@@ -1,0 +1,14 @@
+
+*.bak
+*.exe
+*.orig
+*.pdb
+*.scc
+*.suo
+*.vbproj.user
+*.vspscc
+*.vssscc
+Thumbs.db
+**/bin/*
+**/obj/*
+**/packages/*
