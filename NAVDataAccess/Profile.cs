@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,12 @@ namespace NAVDataAccess
             {
                 _TripHistory = value;
             }
+        }
+
+        public async void AddNewProfile()
+        {
+            WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            await proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
         }
     }
 
