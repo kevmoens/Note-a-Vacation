@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8304ec2c-c698-413e-b5e8-c2bba9abe4f3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52801/MongoRequest.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MongoRequest.disco" MetadataType="Disco" ID="b855390f-c8de-4364-97ea-af208fabea91" SourceId="1" SourceUrl="http://localhost:52801/MongoRequest.svc?disco" />
+    <MetadataFile FileName="MongoRequest.xsd" MetadataType="Schema" ID="a1c6360c-ce0c-4af6-b313-66a68782a9d8" SourceId="1" SourceUrl="http://localhost:52801/MongoRequest.svc?xsd=xsd1" />
+    <MetadataFile FileName="MongoRequest.wsdl" MetadataType="Wsdl" ID="5020aa89-bb5f-4c52-9256-207ecbf5ab2d" SourceId="1" SourceUrl="http://localhost:52801/MongoRequest.svc?wsdl" />
+    <MetadataFile FileName="MongoRequest1.xsd" MetadataType="Schema" ID="d3a79a8e-dd1e-46ba-9cf0-c47d588fb5d0" SourceId="1" SourceUrl="http://localhost:52801/MongoRequest.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

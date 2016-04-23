@@ -1,9 +1,11 @@
 ﻿Module modMongoService
-    Public gsMongoLabConnect As String = "mongodb://kevmoens:kevmoens@ds037095.mongolab.com:37095/kevmoens"
-    Public gsMongoLabDatabase As String = "kevmoens"
-    Public gsMongoLabCollection As String = "users"
-    Public gsOpenShiftConect As String = "mongodb://admin:pMv9gZVvpYCD@127.0.0.1:27017"
-    Public gsOpenShiftDatabase As String = "mongodb"
+    'Public gsMongoLabConnect As String = "mongodb://kevmoens:kevmoens@ds037095.mongolab.com:37095/kevmoens"
+    'Public gsMongoLabDatabase As String = "kevmoens"
+    'Public gsMongoLabCollection As String = "users"
+    Public gsNAVConnect As String = "mongodb://thaoh:nospoon1@ds013221.mlab.com:13221/pico"
+    Public gsNVADatabase As String = "pico"
+    'Public gsOpenShiftConect As String = "mongodb://admin:pMv9gZVvpYCD@127.0.0.1:27017"
+    'Public gsOpenShiftDatabase As String = "mongodb"
     <System.Runtime.CompilerServices.Extension()>
     Public Function JsonClean(json As String) As String
 

@@ -16,8 +16,8 @@ Public Class MongoRequest
 
     Public Function InsertOne(Table As String, value As String) As String Implements IRequest.InsertOne
         Try
-            Dim client As New MongoClient(gsMongoLabConnect)
-            Dim db = client.GetDatabase(gsMongoLabDatabase)
+            Dim client As New MongoClient(gsNAVConnect)
+            Dim db = client.GetDatabase(gsNVADatabase)
             Dim dbcollection = db.GetCollection(Of BsonDocument)(Table)
             Dim newrec = MongoDB.Bson.Serialization.BsonSerializer.Deserialize(Of BsonDocument)(value)
             dbcollection.InsertOne(newrec)
@@ -29,8 +29,8 @@ Public Class MongoRequest
 
     Public Function Query(Table As String, value As String) As String Implements IRequest.Query
 
-        Dim client As New MongoClient(gsMongoLabConnect)
-        Dim db = client.GetDatabase(gsMongoLabDatabase)
+        Dim client As New MongoClient(gsNAVConnect)
+        Dim db = client.GetDatabase(gsNVADatabase)
 
         Dim dbcollection = db.GetCollection(Of BsonDocument)(Table)
         Dim dbquery As New BsonDocument
@@ -47,8 +47,8 @@ Public Class MongoRequest
 
     Public Function Update(Table As String, Command As String, ByVal query As String, value As String) As String Implements IRequest.Update
         Try
-            Dim client As New MongoClient(gsMongoLabConnect)
-            Dim db = client.GetDatabase(gsMongoLabDatabase)
+            Dim client As New MongoClient(gsNAVConnect)
+            Dim db = client.GetDatabase(gsNVADatabase)
 
             Dim dbcollection = db.GetCollection(Of BsonDocument)(Table)
             Dim dbquery As New BsonDocument
@@ -67,8 +67,8 @@ Public Class MongoRequest
 
     Public Function QueryXML(Table As String, value As String) As String Implements IRequest.QueryXML
 
-        Dim client As New MongoClient(gsMongoLabConnect)
-        Dim db = client.GetDatabase(gsMongoLabDatabase)
+        Dim client As New MongoClient(gsNAVConnect)
+        Dim db = client.GetDatabase(gsNVADatabase)
 
         Dim dbcollection = db.GetCollection(Of BsonDocument)(Table)
         Dim dbquery As New BsonDocument
