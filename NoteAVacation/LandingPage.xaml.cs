@@ -53,9 +53,8 @@ namespace NoteAVacation
         {
             try
             {
-                if (await Profile.LoginRequest(txtEmail.Text, txtPassword.Text))
+                if (await Profile.LoginRequest(txtEmail.Text, txtPassword.Password))
                 {
-                    await new MessageDialog("Valid").ShowAsync();
                     Frame.Navigate(typeof(MainPage));
                 return;
                     //Navigate

@@ -41,7 +41,7 @@
         <TextBox x:Name="txtReenterEmail" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=gCol3}"/>
         
         <TextBlock x:Name="lblPassword" HorizontalAlignment="Left"  Grid.Row="6" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="{Binding ActualWidth, ElementName=gCol2}"/>
-        <TextBox x:Name="txtPassword" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=gCol3}"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="6"  VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=gCol3}" />
         
         <Button x:Name="btnSignUp" Content="Sign Up" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="7" VerticalAlignment="Top"  Width="{Binding ActualWidth, ElementName=gCol3}" Click="btnSignUp_Click"/>
 

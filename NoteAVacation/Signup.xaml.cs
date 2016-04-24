@@ -45,7 +45,7 @@ namespace NoteAVacation
 
             Profile newProfile = new Profile();
             newProfile.Email = txtEmail.Text.ToLower();
-            newProfile.Password = txtPassword.Text;
+            newProfile.Password = txtPassword.Password;
             newProfile.FirstName = txtFirstName.Text;
             newProfile.LastName = txtLastName.Text;
             string addMessage = await newProfile.AddNewProfile();
