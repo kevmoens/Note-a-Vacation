@@ -85,17 +85,46 @@ namespace NAVDataAccess
         public async Task<string> AddNewProfile()
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            if (await LoginExists(Email)) {
+                return "Login already exists";
+            }
             //string result = await proxy.QueryAsync("profile", "");
             //deserialize to see if it returns a profile
             //if profile doesn't exist run add else return false
             await proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
             return "";
         }
-        public async Task<bool> LoginRequest(string inEmail, string inPassword)
+        public static async Task<bool> LoginRequest(string inEmail, string inPassword)
         {
-                        WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
-            string result = await proxy.QueryAsync("profile", "");
-            return false;
+            WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            string result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' }, Password: { $eq: '" + inPassword + "' } }");
+      
+
+            ElementProfiles p = JsonConvert.DeserializeObject<ElementProfiles>(result);
+            if (p == null || p.Elements.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static async Task<bool> LoginExists(string inEmail)
+        {
+            WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            string result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' } }");
+
+
+            ElementProfiles p = JsonConvert.DeserializeObject<ElementProfiles>(result);
+            if (p == null || p.Elements.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 
@@ -293,5 +322,10 @@ namespace NAVDataAccess
                 _Price = value;
             }
         }
+    }
+
+    public class ElementProfiles
+    {
+        public List<Profile> Elements;
     }
 }

@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteAVacation", "NoteAVacation.csproj", "{A910CF10-8357-4071-B2DD-9F59778B7D24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteAVacation", ".\NoteAVacation\NoteAVacation.csproj", "{A910CF10-8357-4071-B2DD-9F59778B7D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAVDataAccess", "..\NAVDataAccess\NAVDataAccess.csproj", "{AA911F50-E4B9-4332-AF55-03C45D8392B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAVDataAccess", ".\NAVDataAccess\NAVDataAccess.csproj", "{AA911F50-E4B9-4332-AF55-03C45D8392B4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8328CA39-297A-4D94-9CBC-66BE34D8BCA6} = {8328CA39-297A-4D94-9CBC-66BE34D8BCA6}
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WcfMongo", "..\WcfMongo\WcfMongo.vbproj", "{8328CA39-297A-4D94-9CBC-66BE34D8BCA6}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WcfMongo", ".\WcfMongo\WcfMongo.vbproj", "{8328CA39-297A-4D94-9CBC-66BE34D8BCA6}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExpediaSDK", "..\ExpediaSDK\ExpediaSDK.vbproj", "{4DF4176B-4114-4D05-A4B5-B82CE9809732}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExpediaSDK", ".\ExpediaSDK\ExpediaSDK.vbproj", "{4DF4176B-4114-4D05-A4B5-B82CE9809732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

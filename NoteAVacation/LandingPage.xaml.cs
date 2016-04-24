@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls.Maps;
+using NAVDataAccess;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace NoteAVacation
@@ -48,9 +49,22 @@ namespace NoteAVacation
             Frame.Navigate(typeof(Signup));
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            try
+            {
+                if (await Profile.LoginRequest(txtEmail.Text, txtPassword.Text))
+                {
+                    await new MessageDialog("Valid").ShowAsync();
+                    Frame.Navigate(typeof(MainPage));
+                return;
+                    //Navigate
+                }
+            } catch (Exception ex) { }
+
+            await new MessageDialog("inValid login credentials").ShowAsync();
+
         }
+        
     }
 }
