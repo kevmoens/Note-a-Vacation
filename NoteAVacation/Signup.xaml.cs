@@ -44,7 +44,7 @@ namespace NoteAVacation
             }
 
             Profile newProfile = new Profile();
-            newProfile.Email = txtEmail.Text;
+            newProfile.Email = txtEmail.Text.ToLower();
             newProfile.Password = txtPassword.Text;
             newProfile.FirstName = txtFirstName.Text;
             newProfile.LastName = txtLastName.Text;

@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*" x:Name="gCol3"/>
             <ColumnDefinition Width="50" x:Name="gCol4"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnLogin" Content="Login" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Top" Width="260" Height="{Binding ActualHeight,ElementName=gRow5}"  Grid.RowSpan="2"/>
+        <Button x:Name="btnLogin" Content="Login" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Top" Width="260" Height="{Binding ActualHeight,ElementName=gRow5}"  Grid.RowSpan="2" Click="btnLogin_Click"/>
         <TextBlock x:Name="lblPassword" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="4" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="{Binding ActualWidth,ElementName=gcol2}"/>
         <TextBox x:Name="txtPassword" Grid.Column="2" HorizontalAlignment="Left"  Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=gCol3}"/>
         <TextBlock x:Name="lblEmail" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="{Binding ActualWidth,ElementName=gCol2}"/>
