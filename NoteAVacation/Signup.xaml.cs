@@ -42,7 +42,7 @@ namespace NoteAVacation
                 await new MessageDialog("Email Address don't match").ShowAsync();
                 return;
             }
-
+            
             Profile newProfile = new Profile();
             newProfile.Email = txtEmail.Text.ToLower();
             newProfile.Password = txtPassword.Password;

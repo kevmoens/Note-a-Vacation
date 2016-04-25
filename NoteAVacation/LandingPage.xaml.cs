@@ -53,8 +53,8 @@ namespace NoteAVacation
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
-                if (await Profile.LoginRequest(txtEmail.Text, txtPassword.Password))
+            {                
+                if (await NAVDataAccess.Profile.LoginRequest(txtEmail.Text, txtPassword.Password))
                 {
                     Frame.Navigate(typeof(MainPage));
                 return;

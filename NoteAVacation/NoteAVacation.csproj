@@ -166,7 +166,7 @@
       <Name>ExpediaSDK</Name>
     </ProjectReference>
     <ProjectReference Include="..\NAVDataAccess\NAVDataAccess.csproj">
-      <Project>{aa911f50-e4b9-4332-af55-03c45d8392b4}</Project>
+      <Project>{cd5aea88-c6db-4ad9-ab01-cb654a087e1d}</Project>
       <Name>NAVDataAccess</Name>
     </ProjectReference>
   </ItemGroup>
