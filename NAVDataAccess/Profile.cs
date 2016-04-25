@@ -84,16 +84,16 @@ namespace NAVDataAccess
 
     public class Trip
     {
-        String _Name;
-        public String Name
+        String _TripName;
+        public String TripName
         {
             get
             {
-                return _Name;
+                return _TripName;
             }
             set
             {
-                Name = value;
+                _TripName = value;
             }
         }
         String _LatLongLoc;
