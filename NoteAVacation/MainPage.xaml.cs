@@ -12,10 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Devices.Geolocation;
-using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls.Maps;
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace NoteAVacation
 {
@@ -27,28 +25,35 @@ namespace NoteAVacation
         public MainPage()
         {
             this.InitializeComponent();
-            this.Loaded += Frame_Loaded;
         }
 
-        private async void Frame_Loaded(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            //Map.MapServiceToken = "OzdCEEwHEFD53KK9TqZYQQ";
-            await Map.TrySetViewAsync(new Geopoint(new BasicGeoposition { Latitude = 41.88259, Longitude = -87.63741 }),
-              16, 0, 0, MapAnimationKind.Bow);
+            MySplitVeiw.IsPaneOpen = !MySplitVeiw.IsPaneOpen;
         }
 
-        private async void button_Click(object sender, RoutedEventArgs e)
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
-            var accessStatus = await Geolocator.RequestAccessAsync();
-        }
-
-        private async void button1_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (var element in Map.MapElements)
+            ListBoxItem itm = IconsListBox.SelectedItem as ListBoxItem;
+            
+            switch (itm.Name)
             {
-                await new MessageDialog("").ShowAsync();
+                case  "IconHome":
+                    ScenarioFrame.Navigate(typeof(MainPageTrips));
+                    break;
+                case "IconSettings":
+                    ScenarioFrame.Navigate(typeof(MainPageHistory));
+                    break;
             }
+        }
+
+        private void TextBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

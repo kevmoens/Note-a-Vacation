@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="9c954da1-07b9-430a-817a-b920dfb5df25" Publisher="CN=KevinDell" Version="1.0.0.0" />
+  <Identity Name="9c954da1-07b9-430a-817a-b920dfb5df25" Publisher="CN=KevinDell" Version="1.1.1.0" />
   <mp:PhoneIdentity PhoneProductId="9c954da1-07b9-430a-817a-b920dfb5df25" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>NoteAVacation</DisplayName>
