@@ -29,6 +29,7 @@ namespace NoteAVacation
         {
             this.InitializeComponent();
             this.Loaded += Frame_Loaded;
+           
         }
 
         private  void Frame_Loaded(object sender, RoutedEventArgs e)

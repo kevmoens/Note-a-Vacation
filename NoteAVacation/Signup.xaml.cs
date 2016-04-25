@@ -57,5 +57,10 @@ namespace NoteAVacation
                 return;
             }
         }
+
+        private void txtPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

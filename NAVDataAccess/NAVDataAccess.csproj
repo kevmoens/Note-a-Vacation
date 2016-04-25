@@ -115,6 +115,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modNAVDataAccess.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WcfMongoService\Reference.cs">

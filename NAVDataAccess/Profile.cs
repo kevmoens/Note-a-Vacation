@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,6 +86,7 @@ namespace NAVDataAccess
         public async Task<string> AddNewProfile()
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" && !string.IsNullOrEmpty(modNAVDataAccess.gEndPoint)) proxy.Endpoint.Address = new EndpointAddress(new Uri(modNAVDataAccess.gEndPoint.TrimEnd('/') + "/WcfMongo/MongoRequest.svc"));
             if (await LoginExists(Email)) {
                 return "Login already exists";
             }
@@ -97,6 +99,7 @@ namespace NAVDataAccess
         public static async Task<bool> LoginRequest(string inEmail, string inPassword)
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" && !string.IsNullOrEmpty(modNAVDataAccess.gEndPoint)) proxy.Endpoint.Address = new EndpointAddress(new Uri(modNAVDataAccess.gEndPoint.TrimEnd('/') + "/WcfMongo/MongoRequest.svc"));
             string result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' }, Password: { $eq: '" + inPassword + "' } }");
       
 
@@ -113,6 +116,7 @@ namespace NAVDataAccess
         public static async Task<bool> LoginExists(string inEmail)
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
+            if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" && !string.IsNullOrEmpty(modNAVDataAccess.gEndPoint)) proxy.Endpoint.Address = new EndpointAddress(new Uri(modNAVDataAccess.gEndPoint.TrimEnd('/') + "/WcfMongo/MongoRequest.svc"));
             string result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' } }");
 
 
