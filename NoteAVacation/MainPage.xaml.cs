@@ -31,5 +31,29 @@ namespace NoteAVacation
         {
             MySplitVeiw.IsPaneOpen = !MySplitVeiw.IsPaneOpen;
         }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem itm = IconsListBox.SelectedItem as ListBoxItem;
+            
+            switch (itm.Name)
+            {
+                case  "IconHome":
+                    ScenarioFrame.Navigate(typeof(MainPageTrips));
+                    break;
+                case "IconSettings":
+                    ScenarioFrame.Navigate(typeof(MainPageHistory));
+                    break;
+            }
+        }
+
+        private void TextBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

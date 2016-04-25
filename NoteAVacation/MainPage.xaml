@@ -16,7 +16,6 @@
             <ColumnDefinition Width="56"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Width="300" Height="50" Content="First Content Button"></Button>
         <RelativePanel Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="360">
             <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" />
         </RelativePanel>
@@ -27,32 +26,45 @@
                    CompactPaneLength="56" 
                    HorizontalAlignment="Left">
             <SplitView.Pane>
-                <ListBox SelectionMode="Single" Name="IconsListBox">
-                <ListBoxItem >
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE10F;" />
-                        <TextBlock x:Name="Home" FontSize="24" Margin="20,0,0,0" Text="Home"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24"  Text="&#xE713;"/>
-                        <TextBlock Text="Settings" FontSize="24" Margin="20,0,0,0" />
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE13D;"/>
-                        <TextBlock Text="Profile" FontSize="24" Margin="20,0,0,0"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
+                <ListBox SelectionMode="Single" Name="IconsListBox" SelectionChanged="TextBlock_SelectionChanged">
+                    <ListBoxItem Name="IconHome" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE10F;" SelectionChanged="TextBlock_SelectionChanged" />
+                            <TextBlock x:Name="Home" FontSize="24" Margin="20,0,0,0" Text="Home"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="IconSettings">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24"  Text="&#xE713;" SelectionChanged="TextBlock_SelectionChanged"/>
+                            <TextBlock Text="Settings" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="IconProfile">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE13D;"/>
+                            <TextBlock Text="Profile" FontSize="24" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+        </SplitView>
 
-                </ListBoxItem>
-            </ListBox>
-        
-                   </SplitView.Pane>
-</SplitView>
-        
+        <!--<Button Grid.Column="1" Width="300" Height="50" Content="First Content Button"></Button>-->
+        <RelativePanel Grid.Column="1" Grid.RowSpan="2">
+            <Frame x:Name="ScenarioFrame" RelativePanel.AlignTopWithPanel="True" RelativePanel.Above="StatusPanel" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
+            <StackPanel x:Name="StatusPanel" Orientation="Vertical" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <!--
+                <TextBlock x:Name="StatusLabel" Margin="10,0,0,10" TextWrapping="Wrap" Text="Status:" />
+                <Border x:Name="StatusBorder" Margin="0,0,0,0">
+                    <ScrollViewer VerticalScrollMode="Auto"  VerticalScrollBarVisibility="Auto" MaxHeight="200">
+                        <TextBlock x:Name="StatusBlock" FontWeight="Bold" 
+                                   MaxWidth="{Binding ElementName=Splitter, Path=ActualWidth}" Margin="10,10,10,20" TextWrapping="Wrap"  />
+                    </ScrollViewer>
+                </Border>
+                -->
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>
