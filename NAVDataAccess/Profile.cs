@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,7 +83,7 @@ namespace NAVDataAccess
                 _TripHistory = value;
             }
         }
-
+        
         public async Task<string> AddNewProfile()
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
@@ -90,22 +91,19 @@ namespace NAVDataAccess
             if (await LoginExists(Email)) {
                 return "Login already exists";
             }
-            //string result = await proxy.QueryAsync("profile", "");
+
             //deserialize to see if it returns a profile
             //if profile doesn't exist run add else return false
-            proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
-            return "";
+            return await proxy.InsertOneAsync("profile", JsonConvert.SerializeObject(this));
         }
         public static async Task<bool> LoginRequest(string inEmail, string inPassword)
         {
             WcfMongoService.RequestClient proxy = new WcfMongoService.RequestClient();
             //if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" && !string.IsNullOrEmpty(modNAVDataAccess.gEndPoint)) proxy.Endpoint.Address = new EndpointAddress(new Uri(modNAVDataAccess.gEndPoint.TrimEnd('/') + "/WcfMongo/MongoRequest.svc"));
-
-            string result = string.Empty;
-            //TODO uncomment and fix next line
-            //result = proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' }, Password: { $eq: '" + inPassword + "' } }");
             
-
+            string result = string.Empty;
+            result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' }, Password: { $eq: '" + inPassword + "' } }");
+            
             ElementProfiles p = JsonConvert.DeserializeObject<ElementProfiles>(result);
             if (p == null || p.Elements.Count == 0)
             {
@@ -123,7 +121,7 @@ namespace NAVDataAccess
 
             string result = string.Empty;
             //TODO uncomment and fix next line
-            //result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' } }");
+            result = await proxy.QueryAsync("profile", "{ Email: { $eq: '" + inEmail.ToLower() + "' } }");
 
 
             ElementProfiles p = JsonConvert.DeserializeObject<ElementProfiles>(result);
